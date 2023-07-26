@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIGAA</title>
+  <link rel="icon" href="logo.jpeg">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    @media (max-width: 800px) {
+      body {
+        display: flex;
+        justify-content: right;
+        flex-direction: column;
+      }
+    }
+
+    .form {
+      background-image: url(fundo5.png);
+      background-repeat: no-repeat;
+      background-size: 520px 400px;
+      width: 20%;
+      max-width: 450px;
+      padding: 100px 120px;
+      margin: auto;
+      border-radius: 10px;
+      display: block;
+      text-align: center;
+      margin-top: 50px;
+      font-weight: bold;
+    }
+
+    input {
+      border-radius: 5px;
+      margin-top: 15px;
+      padding: 4px;
+      border-color: lightskyblue;
+    }
+
+    button {
+      width: 80px;
+      padding: 5px;
+      border-radius: 5px;
+      border: 2px lightskyblue solid;
+      background-color: pink;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .mensagem {
+      background-color: lightpink;
+      color: red;
+      width: 190px;
+      text-align: center;
+    }
+
+    .img {
+      width: 50px;
+    }
+
+    .cabecalho {
+      display: flex;
+      flex-direction: row;
+      justify-content: left;
+      padding: 24px;
+      background-image: url(fundo4.jpg);
+      background-repeat: no-repeat;
+      background-size: 1400px;
+    }
+  </style>
+</head>
+
+<body class="fundo">
+  <header class="cabecalho">
+    <img class="img" src="logo-if.png" alt="logo">
+  </header>
+  <main class="form">
+    <h2>Login</h2>
+    <span id="mensagem"></span>
+    <form>
+      <label for="nome">Usuário:</label>
+      <input type="text" id="nome">
+
+      <label for="senha">Senha:</label>
+      <input type="password" id="senha"><br><br>
+
+      <button id="btn">Entrar</button>
+    </form>
+  </main>
+  <script>
+    nome = document.getElementById("nome")
+    senha = document.getElementById("senha")
+    mensagem = document.getElementById("mensagem")
+
+    btn.addEventListener("click", function (evento) {
+      evento.preventDefault()
+
+      if ((nome.value == "Mika" && senha.value == "133") ||
+        (nome.value == "Maria" && senha.value == "567") ||
+        (nome.value == "Ramilho" && senha.value == "098") ||
+        (nome.value == "Cintya" && senha.value == "788")) {
+
+        window.location.href = "materia.html"
+
+      }
+      else {
+        mensagem.innerHTML = "Usuário ou senha incorretos!"
+        mensagem.classList.add("mensagem")
+      }
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGAA</title>
+    <link rel="icon" href="logo.jpeg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin: auto;
+            text-align: center;
+            margin-top: 130px;
+        }
+
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            width: 100px;
+        }
+
+        th {
+            border: 1px solid black;
+            padding: 8px;
+            width: 100px;
+            background-color: lightblue;
+        }
+
+        .img {
+            width: 50px;
+        }
+
+        .cabecalho {
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            padding: 24px;
+            background-image: url(fundo4.jpg);
+            background-repeat: no-repeat;
+            background-size: 1400px;
+        }
+
+        button {
+            display: flex;
+            flex-direction: column;
+            background-color: pink;
+            border-radius: 7px;
+            padding: 8px;
+            border-color: aqua;
+            width: 100px;
+            align-items: center;
+            margin: auto;
+        }
+
+        button:hover {
+            background-color: palevioletred;
+        }
+
+        .Aprovado {
+            background-color: lightgreen;
+            font-weight: bold;
+        }
+
+        .Reprovado {
+            background-color: lightcoral;
+            font-weight: bold;
+        }
+
+        .media {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <img class="img" src="logo-if.png" alt="logo">
+    </header>
+    <table>
+        <tr> <!--linha tabela-->
+            <th>Matérias</th><!--cabeçalho tabela-->
+            <th>1 Bi</th>
+            <th>2 Bi</th>
+            <th>3 Bi</th>
+            <th>4 Bi</th>
+            <th>Média</th>
+            <th>Situação</th>
+        </tr>
+        <tr>
+            <td><strong>Matemática</strong></td><!--dados da tabela-->
+            <td>6.5</td>
+            <td>7.0</td>
+            <td>7.0</td>
+            <td>6.0</td>
+            <td class="media" id="media_mat"></td>
+            <td class="Reprovado" id="sit_mat"></td>
+        </tr>
+        <tr>
+            <td><strong>Português</strong></td>
+            <td>7.0</td>
+            <td>7.0</td>
+            <td>6.0</td>
+            <td>7.5</td>
+            <td class="media" id="media_port"></td>
+            <td class="Reprovado" id="sit_port"></td>
+        </tr>
+        <tr>
+            <td><strong>Geografia</strong></td>
+            <td>9.3</td>
+            <td>9.5</td>
+            <td>8.0</td>
+            <td>8.8</td>
+            <td class="media" id="media_geo"></td>
+            <td class="Aprovado" id="sit_geo"></td>
+        </tr>
+        <tr>
+            <td><strong>História</strong></td>
+            <td>9.3</td>
+            <td>9.8</td>
+            <td>8.5</td>
+            <td>9.5</td>
+            <td class="media" id="media_his"></td>
+            <td class="Aprovado" id="sit_his"></td>
+        </tr>
+        <tr>
+            <td><strong>Sociologia</strong></td>
+            <td>9.0</td>
+            <td>9.3</td>
+            <td>8.0</td>
+            <td>8.6</td>
+            <td class="media" id="media_socio"></td>
+            <td class="Aprovado" id="sit_socio"></td>
+        </tr>
+        <tr>
+            <td><strong>Quimíca</strong></td>
+            <td>5.0</td>
+            <td>7.2</td>
+            <td>6.0</td>
+            <td>7.0</td>
+            <td class="media" id="media_qui"></td>
+            <td class="Reprovado" id="sit_qui"></td>
+        </tr>
+    </table><br><br>
+    <a href="materia.html">
+        <br><button>
+            Voltar
+        </button>
+    </a>
+    <script>
+        media_mat = document.getElementById("media_mat")
+        sit_mat = document.getElementById("sit_mat")
+
+        media = (6.5 + 7.0 + 7.0 + 6.0) / 4
+
+        if (media > 7) {
+            media_mat.innerHTML = media.toFixed(2)
+            sit_mat.innerHTML = "Aprovado"
+        }
+        else if (media <= 7) {
+            media_mat.innerHTML = media.toFixed(2)
+            sit_mat.innerHTML = "Reprovado"
+        }
+
+        media_port = document.getElementById("media_port")
+        sit_port = document.getElementById("sit_port")
+
+        media = (7.0 + 7.0 + 6.0 + 7.5) / 4
+
+        if (media > 7) {
+            media_port.innerHTML = media.toFixed(2)
+            sit_port.innerHTML = "Aprovado"
+        }
+        else if (media <= 7) {
+            media_port.innerHTML = media.toFixed(2)
+            sit_port.innerHTML = "Reprovado"
+        }
+
+        media_geo = document.getElementById("media_geo")
+        sit_geo = document.getElementById("sit_geo")
+
+        media = (9.3 + 9.5 + 8.0 + 8.8) / 4
+
+        if (media > 7) {
+            media_geo.innerHTML = media.toFixed(2)
+            sit_geo.innerHTML = "Aprovado"
+        }
+        else if (media <= 7) {
+            media_geo.innerHTML = media.toFixed(2)
+            sit_geo.innerHTML = "Reprovado"
+        }
+
+        media_his = document.getElementById("media_his")
+        sit_his = document.getElementById("sit_his")
+
+        media = (9.3 + 9.8 + 8.5 + 9.5) / 4
+
+        if (media > 7) {
+            media_his.innerHTML = media.toFixed(2)
+            sit_his.innerHTML = "Aprovado"
+        }
+        else if (media <= 7) {
+            media_his.innerHTML = media.toFixed(2)
+            sit_his.innerHTML = "Reprovado"
+        }
+
+        media_socio = document.getElementById("media_socio")
+        sit_socio = document.getElementById("sit_socio")
+
+        media = (9.0 + 9.3 + 8.0 + 8.6) / 4
+
+        if (media > 7) {
+            media_socio.innerHTML = media.toFixed(2)
+            sit_socio.innerHTML = "Aprovado"
+        }
+        else if (media <= 7) {
+            media_socio.innerHTML = media.toFixed(2)
+            sit_socio.innerHTML = "Reprovado"
+        }
+
+        media_qui = document.getElementById("media_qui")
+        sit_qui = document.getElementById("sit_qui")
+
+        media = (5.0 + 7.2 + 6.0 + 7.0) / 4
+
+        if (media > 7) {
+            media_qui.innerHTML = media.toFixed(2)
+            sit_qui.innerHTML = "Aprovado"
+        }
+        else if (media <= 7) {
+            media_qui.innerHTML = media.toFixed(2)
+            sit_qui.innerHTML = "Reprovado"
+        }
+    </script>
+</body>
+
+</html>
